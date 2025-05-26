@@ -1,0 +1,76 @@
+@import 'tailwindcss';
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 600px;
+  max-height: 800px;
+  height: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  background-color: #eae09f;
+  text-align: center;
+  font-family: sans-serif;
+  display: inline-block;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: black;
+
+}
+
+.file-input {
+  margin: 20px 0;
+}
+
+.file-input input {
+  padding: 10px;
+  border: 1px solid #544d4d;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: rgb(231, 165, 80);
+}
+
+.upload-button {
+  padding: 10px 20px;
+  background-color: #1593fb;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.upload-button:hover {
+  background-color: #150eea;
+}
+
+.transciption-result {
+  margin-top: 30px;
+  color: rgb(132, 108, 108);
+  text-align: center;
+}
+
+.transciption-result h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: rgb(0, 27, 53);
+  background-color: rgb(0, 27, 53);
+}
+
+.transciption-result p {
+  padding: 15px;
+  color: rgb(0, 0, 0);
+  border-radius: 15px;
+  background-color: black;
+}
