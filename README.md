@@ -1,33 +1,85 @@
-My mini application using [OpenAI Transcriptions](https://docs.spring.io/spring-ai/reference/api/audio/transcriptions/openai-transcriptions.html) to transcribe input audio file to text!
+# 🔊 Audio Transcriber App  
 
-Frontend: React, TailwindCSS
-Backend: Spring Boot, Spring AI
+A lightweight application that uses **[OpenAI Transcriptions](https://docs.spring.io/spring-ai/reference/api/audio/transcriptions/openai-transcriptions.html)** to convert audio files into text!  
 
-![Transcriber](./public/myTranscriber.gif)
+### 🛠️ Tech Stack  
+- **Frontend:** React + TailwindCSS  
+- **Backend:** Spring Boot + Spring AI  
 
-***How to use:*** 
-    - Using audio recorder on your computer/laptop or a text to audio mp3 convertor like [TTSMP3](https://ttsmp3.com/). Save the file on your machine
-    - Click `Choose File` to upload the file
-    - Click `Upload and Transcribe`, wait and check the result below.
+![Demo](./public/myTranscriber.gif)  
 
-***How it works:***
-    Sending API request to OpenAI server for transcription, wait for response and populate data to the frontend
+---
 
-***How to run on your local machine:***
-    - **Step 1:** Go to https://start.spring.io/ for initializing the project. Choose Maven - Java - Spring Boot [version] (not SNAPSHOT) - Jar - Java [version]. Let's have the name of the Project `audio-transcriber` for consistency with the configurations. Choose `ADD DEPENDENCIES`: Spring Web + OpenAI. Then click `GENERATE`
-    - **Step 2:** Clone the audio_transcribe (backend) to your local machine. Open it in your IDE (I used Intellij). Delete the current content under `src/main/java` and copy the folder `com.audio.demo` to there.
-    - **Step 3:** Under `main/resources`, copy this code to the `application.properties` file (remember to retrieve your personal API key from your OpenAI account and paste it to `[YOUR_OPENAI_API_KEY]` + check the balance in `Billing` 💸💸💸)
-  
+## 🚀 How to Use  
+1. **Record or Convert Audio**  
+   - Use your computer’s microphone or an online tool like [TTSMP3](https://ttsmp3.com/) to generate an audio file (`.mp3`, `.wav`, etc.).  
+2. **Upload & Transcribe**  
+   - Click **`Choose File`** to upload your audio.  
+   - Click **`Upload and Transcribe`** and wait for the result!  
+
+---
+
+## ⚙️ How It Works  
+- The backend sends an API request to **OpenAI’s Whisper model** for transcription.  
+- The transcribed text is returned and displayed on the frontend.  
+
+---
+
+## 💻 Local Setup  
+
+### **Backend (Spring Boot)**  
+
+#### **Step 1: Initialize Project**  
+Go to **[Spring Initializr](https://start.spring.io/)** and configure:  
+- **Project:** Maven  
+- **Language:** Java  
+- **Spring Boot:** (Latest stable version, **not SNAPSHOT**)  
+- **Packaging:** JAR  
+- **Java:** (Choose your version)  
+- **Dependencies:** `Spring Web` + `OpenAI`  
+- **Project Name:** `audio-transcriber`  
+
+Click **`GENERATE`**, then download and extract the project.  
+
+#### **Step 2: Replace Source Code**  
+```bash
+git clone [your-backend-repo-url]  
+cd audio-transcriber  
+# Delete existing src/main/java and replace with the provided code  
 ```
-spring.application.name=audio-transcribe
-spring.ai.openai.api-key=[YOUR_OPENAI_API_KEY]
-spring.ai.openai.audio.transcription.base-url=https://api.openai.com
-spring.ai.openai.audio.transcription.options.model=whisper-1
-spring.ai.openai.audio.transcription.options.response-format=json
+
+#### **Step 3: Configure OpenAI API Key**  
+Edit `src/main/resources/application.properties`:  
+```properties
+spring.application.name=audio-transcribe  
+spring.ai.openai.api-key=your-api-key-here  # 🔑 Get from OpenAI  
+spring.ai.openai.audio.transcription.base-url=https://api.openai.com  
+spring.ai.openai.audio.transcription.options.model=whisper-1  
+spring.ai.openai.audio.transcription.options.response-format=json  
 ```
 
-    - **Step 4:** Choose run AudioTranscribeApplication
+#### **Step 4: Run the Backend**  
+- Open in **IntelliJ** (or your preferred IDE).  
+- Run `AudioTranscribeApplication`.  
 
-    - **Step 5:** Clone the frontend to your machine. Open the terminal in your IDE, run `npm install`. Make sure you install axios and TailwindCSS properly. Then run `npm run dev` to deploy the app locally at port `5173`
-          
+---
 
+### **Frontend (React)**  
+
+#### **Step 5: Set Up & Run**  
+```bash
+git clone [your-frontend-repo-url]  
+cd frontend  
+npm install   # Install dependencies
+npm run dev   # Runs on http://localhost:5173  
+```
+
+---
+
+### 🔑 Notes  
+- Ensure your **OpenAI API key** is created (check [here](https://platform.openai.com/settings/organization/api-keys)) and you have sufficient credits (check at your `Billing`)  
+- The backend runs on `http://localhost:8080` by default.  
+
+---
+
+🎉 **Done!** Now upload an audio file and see the magic happen.
